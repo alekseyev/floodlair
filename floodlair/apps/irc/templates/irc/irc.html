@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load hide_email %}
+
+{% block title %}Логи легатов | {{ date }}{% endblock title %}
+
+{% block extra-head %}
+    <link rel="next" href="/{{ next }}/" id="NextLink" />
+    <link rel="prev" href="/{{ prev }}/" id="PrevLink" />
+{% endblock extra-head %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}irc/irc.css" type="text/css">
+    {{ form.media.css }}
+{% endblock css %}
+
+{% block js %}
+    {{ block.super }}
+    {{ form.media.js }}
+    <script type="text/javascript">
+        function NavigateThrough (event)
+        {
+          switch (event.keyCode ? event.keyCode : event.which ? event.which : null)
+          {
+            case 0x25:
+              link = document.getElementById ('PrevLink');
+              break;
+            case 0x27:
+              link = document.getElementById ('NextLink');
+              break;
+          }
+          if (link && link.href) document.location = link.href; 
+        }
+
+        $(function() {
+            document.onkeydown = NavigateThrough;
+        });
+    </script>
+ 
+{% endblock js %}
+
+{% block content %}
+    {% for msg in ircmessages %}                                                                                       
+      {% if forloop.first %}
+          <div class=item-list><ul class="pager"><li class="previous"><a href="/{{ prev }}/">&lt;&lt; {{ prev }}</a></li> <li class="next"><a href="/{{ next }}/" style="float: right;">{{ next }} &gt;&gt;</a></li></ul></div>
+      {% endif %}
+      <div class="message message-{{ msg.type }}" id="{{ msg.messageid }}">
+          <div class="time"><a href="/{{ date }}/#{{ msg.messageid }}">{{ msg.time }}</a></div>
+          <div class="sender">{{ msg.sender }}</div>
+          <div class="text">{{ msg.message|urlize|hide_all_emails }}</div>
+      </div>
+    {% empty %}
+      Ничего!
+    {% endfor %}
+    <div class=item-list><ul class="pager"><li class="previous"><a href="/{{ prev }}/">&lt;&lt; {{ prev }}</a></li> <li class="next"><a href="/{{ next }}/" style="float: right;">{{ next }} &gt;&gt;</a></li></ul></div>
+    
+{% endblock content %}
+
+{% block sidebar %}
+    <form action="" method="POST" class="form-inline" id="form" {% block form-extra-attrs %}{{ form_extra_attrs }}{% endblock form-extra-attrs %}>
+        {{ form }}
+        {% csrf_token %}
+        <input type="submit" value="Перейти" class="btn btn-primary">
+    </form>
+{% endblock sidebar %}

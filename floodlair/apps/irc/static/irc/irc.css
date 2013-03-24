@@ -1,0 +1,67 @@
+#date-form {
+    padding-bottom: 50px;
+}
+
+.nav {
+    margin: 10px 0;
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.time, .sender {
+    float: left;
+}
+
+.time {
+    width: 60px;
+}
+
+.sender {
+    color: navy;
+    width: 150px;
+    text-align: right;
+    margin-left: 0;
+}
+
+.text {
+    padding-left: 213px;
+}
+
+@media screen and (max-device-width: 800px) {
+    body {
+        min-width: auto;
+        max-width: auto;
+    }
+    .time, .sender {
+        float: none;
+        display: inline;
+    }
+    .sender {
+        width: auto;
+    }
+    .text {
+        padding: 0;
+        display: inline;
+    }
+}
+.time a {
+    color: #555;
+    text-decoration: none;
+}
+
+.message {
+    color: gray;
+}
+
+.message-1 {
+    color: black;
+}
+
+.message-4 {
+    color: green;
+}
+

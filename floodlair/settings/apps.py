@@ -6,11 +6,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    ]
+]
 
 INSTALLED_APPS += [
     'floodlair.apps.core',
-    ]
+    'floodlair.apps.irc',
+]
 
 INSTALLED_APPS += [
     'helpers42cc',
@@ -18,4 +19,4 @@ INSTALLED_APPS += [
     'debug_toolbar',
     'south',
     'django_coverage',
-    ]
+]
