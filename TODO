@@ -1,0 +1,12 @@
+- Fix WebIRC style
+- Proper menu app
+- embed images/videos
+- Twitter
+- Twitch
+
+
+42-bootstrap:
+- PEP8
+- pytz
+- sticky footer
+- js in head?

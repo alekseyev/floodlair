@@ -41,17 +41,26 @@
 
 </head>
 
-<body><div class="container-fluid">
+<body>
+
+<div id="wrapper">
+<div class="container-fluid">
 
 {% block header_wrapper %}
   <div class="row-fluid"><div class="offset2 span8"><header>
     {% block header_content %}
-    <nav>
-          <ul class="nav nav-pills">
-            <li class="{% block home_active %}{% endblock %}"><a href="{% url "home_page" %}">{% trans "Home" %}</a></li>
-            <li class="{% block stub_active %}{% endblock %}"><a href="#">{% trans "Stub" %}</a></li>
-          </ul>
-    </nav>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a href="/" class="brand">Floodlair</a>
+                <ul class="nav">
+                    <li><a href="{% url "home_page" %}">Логи IRC</a></li>
+                    <li><a href="{% url "home_page" %}">Something else</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     {% endblock header_content %}
   </header></div></div>
 {% endblock header_wrapper %}
@@ -62,11 +71,15 @@
   </article></div></div>
 {% endblock content_wrapper %}
 
+<div id="push"></div>
+</div> {# container #}
+</div> {# wrapper #}
+
 {% block footer_wrapper %}
-    <div class="row-fluid"><div class="offset2 span8"><footer>
-        {% block footer %}{% endblock footer %}
-    </footer></div></div>
+    <div class="row-fluid"><div class="offset2 span8"><footer><div>
+        {% block footer %}Welcome to the future(nothing's changed)!{% endblock footer %}
+    </div></footer></div></div>
 {% endblock footer_wrapper %}
 
-</div></body>
+</body>
 </html>
