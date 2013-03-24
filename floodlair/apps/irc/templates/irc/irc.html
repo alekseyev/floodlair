@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load hide_email %}
+{% load static from staticfiles %}
 
 {% block head_title %}Логи легатов | {{ date }}{% endblock head_title %}
 
@@ -10,7 +11,7 @@
 
 {% block extra_style %}
     {{ block.super }}
-    <link rel="stylesheet" href="{{ STATIC_URL }}irc/irc.css" type="text/css">
+    <link rel="stylesheet" href="{% static "irc/irc.css" %}" type="text/css">
     {{ form.media.css }}
 {% endblock extra_style %}
 

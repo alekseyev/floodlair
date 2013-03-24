@@ -11,6 +11,7 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     'floodlair.apps.core',
     'floodlair.apps.irc',
+    'floodlair.apps.util',
 ]
 
 INSTALLED_APPS += [
