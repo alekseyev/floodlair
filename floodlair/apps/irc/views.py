@@ -73,3 +73,7 @@ def main(request, day = 0, month = 0, year = 0):
     prev = (the_date - timedelta(1)).strftime('%d.%m.%Y')
     next = (the_date + timedelta(1)).strftime('%d.%m.%Y')
     return render(request, 'irc/irc.html', {'ircmessages': messages, 'form': form, 'prev': prev, 'next': next, 'date': curr })
+
+
+def webirc(request):
+    return render(request, 'irc/webirc.html')

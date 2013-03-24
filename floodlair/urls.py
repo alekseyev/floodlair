@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
-from floodlair.apps.core.views import HomeView
+from django.shortcuts import render
 
 
 admin.autodiscover()
@@ -11,6 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', 'apps.irc.views.main', name="home_page"),
     url(r'^(\d{2})\.(\d{2})\.(\d{4})/$', 'apps.irc.views.main'),
+    url(r'^webirc/$', 'apps.irc.views.webirc', name="webirc"),
     url(r'^admin/', include(admin.site.urls)),
 )
 

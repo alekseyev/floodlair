@@ -4,7 +4,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>{% block head_title %}{% endblock head_title %}</title>
+    <title>{% block head_title %}{% endblock head_title %} | Floodlair</title>
 
   {% block base_style %}
     <link rel="stylesheet/less" type="text/css" href="{% static 'css/libs/bootstrap/less/bootstrap.less' %}"
@@ -55,7 +55,7 @@
                 <a href="/" class="brand">Floodlair</a>
                 <ul class="nav">
                     <li><a href="{% url "home_page" %}">Логи IRC</a></li>
-                    <li><a href="{% url "home_page" %}">Something else</a></li>
+                    <li><a href="{% url "webirc" %}">WebIRC</a></li>
                 </ul>
             </div>
         </div>
