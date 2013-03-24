@@ -12,6 +12,7 @@ Vagrantfile
 tests/coverage/modules/*
 Makefile.def
 floodlair/settings/local.py
+db.sqlite3
 
 #
 # Included objects
