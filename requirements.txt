@@ -1,0 +1,9 @@
+Django==1.4
+South
+django-debug-toolbar
+coverage
+django-coverage
+wsgiref
+sorl-thumbnail
+PIL
+django-annoying
