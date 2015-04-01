@@ -26,7 +26,7 @@ def main(request, day = 0, month = 0, year = 0):
             the_date -= timedelta(1)
     curr = the_date.strftime('%d.%m.%Y')
     form = DateForm(initial = { 'date': curr })
-    time1 = tz.localize(datetime(the_date.year, the_date.month, the_date.day, 6, 0, 0, 0))
+    time1 = tz.localize(datetime(the_date.year, the_date.month, the_date.day, 3, 0, 0, 0))
     timestamp1 = timegm(time1.timetuple())
     timestamp2 = timestamp1 + 60 * 60 * 24
     messages = []
