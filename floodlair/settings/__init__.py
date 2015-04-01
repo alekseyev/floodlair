@@ -20,5 +20,5 @@ IS_TESTING = strtobool(os.environ.get("TESTING", "no"))
 try:
     from local import *
 except:
-    print '***floodlair/settins/local.py not found***'
+    print '***floodlair/settings/local.py not found***'
 
