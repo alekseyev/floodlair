@@ -65,6 +65,6 @@
     color: green;
 }
 
-.message:target {
-    color: red;
+.message:target * {
+    background: yellow;
 }
