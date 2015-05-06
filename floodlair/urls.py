@@ -13,6 +13,8 @@ urlpatterns = patterns('',
     url(r'^$', 'apps.irc.views.main', name="home_page"),
     url(r'^(\d{2})\.(\d{2})\.(\d{4})/$', 'apps.irc.views.main'),
     url(r'^webirc/$', 'apps.irc.views.webirc', name="webirc"),
+    url(r'^schedule/$', TemplateView.as_view(
+        template_name='sched.html'), name="sched"),
     url(r'^robots.txt$', TemplateView.as_view(
         template_name='robots.txt', content_type="text/plain")),
     url(r'^admin/', include(admin.site.urls)),
