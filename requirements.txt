@@ -5,6 +5,6 @@ coverage
 django-coverage
 wsgiref
 sorl-thumbnail
-PIL
+Pillow
 django-annoying
 pytz
