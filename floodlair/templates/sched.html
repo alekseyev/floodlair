@@ -34,9 +34,9 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="hour in hours" class="timetable-row">
-                        <td>{{ hour.label }}</td>
-                        <td ng-class="{ 'busy': tables[0].aware_zones[hour.hour][hour.half] }">{{ tables[0].aware_table[hour.hour][hour.half] }}</td>
-                        <td ng-class="{ 'busy': tables[1].aware_zones[hour.hour][hour.half] }">{{ tables[1].aware_table[hour.hour][hour.half] }}</td>
+                        <td class="timetable-time">{{ hour.label }}</td>
+                        <td ng-class="{ 'busy': tables[0].aware_zones[hour.hour][hour.half] }" class="timetable-cell">{{ tables[0].aware_table[hour.hour][hour.half] }}</td>
+                        <td ng-class="{ 'busy': tables[1].aware_zones[hour.hour][hour.half] }" class="timetable-cell">{{ tables[1].aware_table[hour.hour][hour.half] }}</td>
                     </tr>
                 </tbody>
             </table>
