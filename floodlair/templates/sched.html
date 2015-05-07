@@ -24,7 +24,7 @@
                 <option value="2">(UTC+2) Киев, Минск</option>
                 <option value="3">(UTC+3) Москва, Петербург</option>
             </select> -->
-            <table class="table">
+            <table class="table timetable-table">
                 <thead>
                     <tr>
                         <th></th>
@@ -33,10 +33,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="hour in hours">
-                        <td>{{ hour }}:00</td>
-                        <td><!-- {{ tables[0].aware_zones[hour] }} --> {{ tables[0].aware_table[hour] }}</td>
-                        <td><!-- {{ tables[1].aware_zones[hour] }} --> {{ tables[1].aware_table[hour] }}</td>
+                    <tr ng-repeat="hour in hours" class="timetable-row">
+                        <td>{{ hour.label }}</td>
+                        <td ng-class="{ 'busy': tables[0].aware_zones[hour.hour][hour.half] }">{{ tables[0].aware_table[hour.hour][hour.half] }}</td>
+                        <td ng-class="{ 'busy': tables[1].aware_zones[hour.hour][hour.half] }">{{ tables[1].aware_table[hour.hour][hour.half] }}</td>
                     </tr>
                 </tbody>
             </table>
