@@ -43,19 +43,23 @@ footer {
 }
 
 tr.timetable-row {
-    height: 28px;
     font-size: 14px;
     line-height: 18px;
     padding: 0px;
-    td {
+}
+
+td.timetable-cell, th.timetable-cell {
+    width: 400px;
+    padding: 0px 0px 0px 10px;
+    div {
+        height: 36px;
+        margin: 0;
         padding: 0px 0px 0px 4px;
     }
 }
 
-td.timetable-cell {
-    width: 400px;
-}
-
-td.timetable-time {
-    width: 120px;
+.timetable-time {
+    padding: 0px 0px 0px 4px;
+    width: 50px;
+    max-width: 50px;
 }

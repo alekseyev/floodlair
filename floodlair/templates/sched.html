@@ -27,16 +27,16 @@
             <table class="table timetable-table">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th>Дорм, лихой и отчаянный корги </th>
-                        <th>Орёл наш, дон Рэба</th>
+                        <th class="timetable-time"></th>
+                        <th class="timetable-cell">Дорм, лихой и отчаянный корги </th>
+                        <th class="timetable-cell">Орёл наш, дон Рэба</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="hour in hours" class="timetable-row">
                         <td class="timetable-time">{{ hour.label }}</td>
-                        <td ng-class="{ 'busy': tables[0].aware_zones[hour.hour][hour.half] }" class="timetable-cell">{{ tables[0].aware_table[hour.hour][hour.half] }}</td>
-                        <td ng-class="{ 'busy': tables[1].aware_zones[hour.hour][hour.half] }" class="timetable-cell">{{ tables[1].aware_table[hour.hour][hour.half] }}</td>
+                        <td class="timetable-cell"><div ng-class="{ 'busy': tables[0].aware_zones[hour.hour][hour.half] }">{{ tables[0].aware_table[hour.hour][hour.half] }}&nbsp;</div></td>
+                        <td class="timetable-cell"><div ng-class="{ 'busy': tables[1].aware_zones[hour.hour][hour.half] }">{{ tables[1].aware_table[hour.hour][hour.half] }}&nbsp;</div></td>
                     </tr>
                 </tbody>
             </table>
