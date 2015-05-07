@@ -15,7 +15,7 @@ schedApp.controller('SchedController', function ($scope) {
                     13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
     $scope.hello = "Hello";
     $scope.timezone = - new Date().getTimezoneOffset() / 60;
-    $scope.dst = 1;
+    $scope.dst = window.dst;
 
     $scope.tables = [
         {

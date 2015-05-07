@@ -1,14 +1,13 @@
 from django import template
-from django.template.defaultfilters import stringfilter
-from django.utils.safestring import mark_safe
+
+from datetime import datetime
+import pytz
+
 
 register = template.Library()
 
-import html5lib
-from html5lib import sanitizer
 
-@register.filter
-@stringfilter
-def sanitize(value):
-    p = html5lib.HTMLParser(tokenizer=sanitizer.HTMLSanitizer)
-    return mark_safe(p.parseFragment(value).toxml())
+@register.simple_tag
+def is_dst():
+    isdst_now_in = lambda zonename: bool(datetime.now(pytz.timezone(zonename)).dst())
+    return int(isdst_now_in('Europe/Madrid'))
