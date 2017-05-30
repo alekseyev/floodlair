@@ -96,7 +96,7 @@ schedApp.controller('SchedController', function ($scope) {
         },
         {
             name: "Reba",
-            timezone: 1,
+            timezone: -8,
             dst: 1,
             table: {
                 0: ["Сон", ""],
