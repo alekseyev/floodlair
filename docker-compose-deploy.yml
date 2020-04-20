@@ -1,4 +1,9 @@
 version: "3.5"
+networks:
+  web:
+    driver: bridge
+  internal:
+    driver: bridge
 
 services:
   server:
@@ -17,6 +22,20 @@ services:
     ports:
       - "8000:8000"
     command: make run
+    networks:
+      - internal
+
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - server
+    networks:
+      - internal
+      - web
 
   quasselcore:
     build:
@@ -27,3 +46,6 @@ services:
     ports:
       - "4242:4242"
     command: quasselcore --configdir=/var/storage/quassel
+    networks:
+      - internal
+      - web
