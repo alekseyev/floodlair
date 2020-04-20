@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     tty: true
     environment:
-      DB_FILE=/var/storage/quassel/quassel-storage.sqlite
-      BUFFERID=7
+      DB_FILE: /var/storage/quassel/quassel-storage.sqlite
+      BUFFERID: 7
     volumes:
       - .:/opt/server
       - /mnt/volume_ams3_01/:/var/storage
