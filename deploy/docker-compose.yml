@@ -6,7 +6,7 @@ services:
       context: './'
       dockerfile: Dockerfile
     tty: true
-    environment: : 
+    environment:
       DB_FILE=/var/storage/quassel/quassel-storage.sqlite
       BUFFERID=7
     volumes:
