@@ -5,6 +5,10 @@ run:
 	@echo Starting $(PROJECT_NAME) ...
 	gunicorn -b $(BIND_TO):$(RUNSERVER_PORT) --workers=$(NUM_WORKERS) $(PROJECT_NAME).wsgi
 
+rundebug:
+	@echo Starting $(PROJECT_NAME) ...
+	gunicorn -b $(BIND_TO):$(RUNSERVER_PORT) --workers=$(NUM_WORKERS) $(PROJECT_NAME).wsgi --reload
+
 runserver:
 	$(MANAGE) runserver $(BIND_TO):$(RUNSERVER_PORT)
 

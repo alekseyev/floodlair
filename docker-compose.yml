@@ -16,4 +16,4 @@ services:
       - ./storage:/var/storage
     ports:
       - "8000:8000"
-    command: make run
+    command: make rundebug
