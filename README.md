@@ -1,4 +1,15 @@
 floodlair
 =========
 
-something old, something new, something borrowed, something blue
+Create `.env` containing quassel db parameters
+
+```
+DB_FILE=/var/storage/quassel/quassel-storage.sqlite
+BUFFERID=7
+```
+
+Then
+
+```
+docker-compose up
+```

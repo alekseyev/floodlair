@@ -11,6 +11,9 @@
 
 run:
 	@echo Starting $(PROJECT_NAME) ...
+	gunicorn -b $(BIND_TO):$(RUNSERVER_PORT) --workers=$(NUM_WORKERS) $(PROJECT_NAME).wsgi
+
+runserver:
 	$(MANAGE) runserver $(BIND_TO):$(RUNSERVER_PORT)
 
 mailserver:
