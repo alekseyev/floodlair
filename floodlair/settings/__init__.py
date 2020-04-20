@@ -14,11 +14,7 @@ from cache import *
 from debug_toolbar_settings import *
 from logging import *
 from tests import *
+from quassel import *
 
 IS_TESTING = strtobool(os.environ.get("TESTING", "no"))
-
-try:
-    from local import *
-except:
-    print '***floodlair/settings/local.py not found***'
 
