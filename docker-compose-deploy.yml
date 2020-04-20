@@ -50,3 +50,13 @@ services:
     networks:
       - internal
       - web
+
+  complain:
+    image: nginx
+    volumes:
+      - ./complain/web:/opt/web
+      - ./complain/nginx:/etc/nginx/conf.d
+    ports:
+      - "6001:6001"
+    networks:
+      - web
