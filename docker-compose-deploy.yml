@@ -28,7 +28,7 @@ services:
   nginx:
     image: nginx
     ports:
-      - "80:80"
+      - "5001:5001"
     volumes:
       - .:/opt/server
       - ./nginx:/etc/nginx/conf.d

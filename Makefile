@@ -26,7 +26,7 @@ clean:
 
 manage:
 ifndef CMD
-	@echo Please, spceify -e CMD=command argument to execute
+	@echo Please, specify -e CMD=command argument to execute
 else
 	$(MANAGE) $(CMD)
 endif
