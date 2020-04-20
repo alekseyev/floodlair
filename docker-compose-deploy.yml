@@ -30,6 +30,7 @@ services:
     ports:
       - "80:80"
     volumes:
+      - .:/opt/server
       - ./nginx:/etc/nginx/conf.d
     depends_on:
       - server
