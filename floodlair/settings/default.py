@@ -34,3 +34,4 @@ ROOT_URLCONF = 'floodlair.urls'
 
 WSGI_APPLICATION = 'floodlair.wsgi.application'
 
+ALLOWED_HOSTS = ['floodlair.club']
