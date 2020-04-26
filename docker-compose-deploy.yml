@@ -31,12 +31,11 @@ services:
       - "5001:5001"
     volumes:
       - .:/opt/server
-      - ./nginx:/etc/nginx/conf.d
-    depends_on:
-      - server
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/server.conf:/etc/nginx/conf.d/server.conf
     networks:
-      - internal
-      - web
+    - internal
+    - web
 
   quasselcore:
     build:

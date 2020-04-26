@@ -17,3 +17,14 @@ services:
     ports:
       - "8000:8000"
     command: make rundebug
+
+  nginx:
+    image: nginx
+    ports:
+      - "5001:5001"
+    volumes:
+      - .:/opt/server
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/server.conf:/etc/nginx/conf.d/server.conf
+    depends_on:
+      - server
