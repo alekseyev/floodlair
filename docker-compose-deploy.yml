@@ -51,6 +51,14 @@ services:
       - internal
       - web
 
+  webirc:
+    build:
+      context: './webirc'
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8080"
+    command: node relay.js
+
   complain:
     image: nginx
     volumes:
