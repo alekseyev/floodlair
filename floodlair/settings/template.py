@@ -1,4 +1,4 @@
-from utils import root
+from .utils import root
 
 
 TEMPLATE_DIRS = [

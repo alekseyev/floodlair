@@ -1,4 +1,4 @@
-FROM python:2.7.17-buster
+FROM python:3.8.2-slim
 
 RUN apt-get update
 RUN apt-get -y install gcc git make

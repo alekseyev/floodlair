@@ -1,5 +1,5 @@
 import sys
-from utils import proj
+from .utils import proj
 
 
 DEBUG = True
@@ -34,4 +34,4 @@ ROOT_URLCONF = 'floodlair.urls'
 
 WSGI_APPLICATION = 'floodlair.wsgi.application'
 
-ALLOWED_HOSTS = ['floodlair.club']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'floodlair.club']
