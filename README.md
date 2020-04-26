@@ -1,15 +1,12 @@
 floodlair
 =========
 
-Create `.env` containing quassel db parameters
-
-```
-DB_FILE=/var/storage/quassel/quassel-storage.sqlite
-BUFFERID=7
-```
+Put `quassel-store.sqlite` to `storage/quassel`
 
 Then
 
 ```
 docker-compose up
 ```
+
+And open http://127.0.0.1:5001/
